@@ -1,0 +1,99 @@
+/* 子页共用：新首页的配色、字体、顶栏。放在页面自身样式之后加载。 */
+@font-face{font-family:"PF Serif";src:url("fonts/serif-subset.woff2") format("woff2");font-weight:200 900;font-display:swap}
+:root,:root:not([data-theme="light"]),:root[data-theme="dark"]{
+  --bg:#F2EEE6;--paper:#FBF9F4;--sunk:#E9E3D8;--ink:#1D221E;--muted:#5F665F;--faint:#8E928A;--line:#CFC7B8;
+  --accent:#56634B;--accent-soft:#DDE2D3;--accent-ink:#F2EEE6;
+  --t-direct:#4E6B45;--t-direct-soft:#DFE6D6;--need:#4E6B45;--need-soft:#DFE6D6;--good:#4E6B45;--good-soft:#DFE6D6;
+  --t-near:#9C6B3E;--t-near-soft:#F0E2D0;--warm:#9C6B3E;--warm-soft:#F0E2D0;--warn:#9C6B3E;--warn-soft:#F0E2D0;
+  --t-out:#6E716A;--t-out-soft:#E6E1D7;--grey:#6E716A;--grey-soft:#E6E1D7;
+  --f-serif:"PF Serif","Noto Serif SC","Source Han Serif SC","Songti SC",serif;
+  --f-body:"PingFang SC","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+  --f-mono:ui-monospace,"SFMono-Regular",Consolas,monospace;
+  --r:6px;color-scheme:light}
+:root{--f-display:var(--f-serif)}
+html,body{background:var(--bg)}
+
+/* 顶栏：与首页刊头一致 */
+.pf-nav{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--ink);font-family:var(--f-body)}
+.pf-nav .in{max-width:1240px;margin:0 auto;padding:12px 16px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 22px}
+@media (min-width:760px){.pf-nav .in{padding-inline:40px}}
+.pf-nav .me{font-family:var(--f-serif);font-weight:700;font-size:15px;color:var(--ink);text-decoration:none;margin-right:auto}
+.pf-nav a.l{font-size:13px;color:var(--muted);text-decoration:none;white-space:nowrap;padding-bottom:2px;border-bottom:1px solid transparent}
+.pf-nav a.l:hover{color:var(--ink)}
+.pf-nav a.l[aria-current]{color:var(--ink);border-bottom-color:var(--ink)}
+.pf-nav .btn{font-size:12.5px;letter-spacing:.08em;text-decoration:none;background:var(--ink);color:var(--bg);padding:5px 16px;border-radius:999px;white-space:nowrap}
+.pf-nav .btn:hover{background:var(--accent)}
+@media (max-width:620px){.pf-nav .in{gap:6px 14px}.pf-nav .me{flex-basis:100%}.pf-nav .btn{margin-left:auto}}
+
+/* 流程位置说明 */
+.pf-pos{max-width:1240px;margin:20px auto 0;padding:0 16px}
+@media (min-width:760px){.pf-pos{padding-inline:40px}}
+.pf-pos p{margin:0;padding:10px 0 10px 14px;border-left:2px solid var(--accent);font-size:13px;color:var(--muted);line-height:1.75}
+.pf-pos a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
+
+/* 库页面：标题用宋体，其余一律黑体 */
+.pf-lib{--f-display:var(--f-body)}
+.pf-lib .hero h1,.pf-lib h2,.pf-lib .bignum b,.pf-lib .stat .v{font-family:var(--f-serif)!important}
+.pf-lib .bar{top:var(--pf-nav-h,50px)!important}
+
+/* 方法论页 */
+.pf-method blockquote{font-family:var(--f-body);font-size:14.5px}
+.pf-method .wrap{max-width:1240px}
+@media (min-width:760px){.pf-method .wrap{padding-inline:40px}}
+.pf-method h1 em{color:var(--accent)}
+.pf-method .card,.pf-method .flow,.pf-method .stats,.pf-method .tbl{border-radius:6px}
+.pf-lib .hero .lede-list{margin:14px 0 0;padding:0;list-style:none;max-width:52ch;font-size:15px;line-height:1.7;color:var(--muted)}
+.pf-lib .hero .lede-list li{position:relative;padding-left:16px;margin:6px 0}
+.pf-lib .hero .lede-list li::before{content:"";position:absolute;left:2px;top:.72em;width:6px;height:1px;background:currentColor}
+.pf-lib .hero .lede-list b{color:var(--ink);font-weight:600}
+.pf-lib .hero .lede-num{margin-top:14px;font-size:15px}
+.pf-nav a.back{font-size:13px;color:var(--ink);text-decoration:none;white-space:nowrap;padding:3px 12px;border:1px solid var(--line,#cfc8bb);border-radius:999px}
+.pf-nav a.back:hover{border-color:var(--ink)}
+@media (max-width:620px){.pf-nav a.back{padding:2px 10px}}
+.pf-nav .me{margin-right:0}
+.pf-nav a.back{margin-right:auto}
+.pf-nav .br{display:none}
+@media (max-width:620px){
+  .pf-nav .me{flex-basis:auto;margin-right:auto}
+  .pf-nav a.back{margin-right:0}
+  .pf-nav .br{display:block;flex-basis:100%;height:0}
+}
+.pf-lib .hero h1.pf-h1-2{font-size:clamp(30px,4.6vw,58px)}
+.pf-lib .hero h1.pf-h1-2 span{display:inline-block}
+.pf-nw{white-space:nowrap}
+.pf-crumb{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 16px}
+.pf-pos a.pf-step{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em;color:var(--accent);border-bottom:0}
+.pf-chain{display:inline-flex;flex-wrap:wrap;align-items:baseline;gap:2px 8px}
+.pf-chain i{font-style:normal;color:var(--muted);opacity:.6}
+.pf-chain b{color:var(--ink);font-weight:600}
+.pf-pos .pf-chain a{color:var(--muted);border-bottom:1px solid transparent}
+.pf-pos .pf-chain a:hover{color:var(--ink);border-bottom-color:var(--line)}
+.pf-method .pf-mtop{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:56px;align-items:end}
+.pf-method .hero h1{font-size:clamp(32px,4.6vw,56px);line-height:1.12;margin:14px 0 18px}
+.pf-method .hero h1 em{display:block;margin-top:.12em}
+.pf-method .hero .lede{max-width:34em}
+.pf-method .pf-mtop .source{margin:0;max-width:none}
+.pf-method .hero .stats{margin-top:36px}
+@media (max-width:960px){.pf-method .pf-mtop{grid-template-columns:1fr;gap:20px}}
+@media (max-width:620px){.pf-method .hero h1 em{font-size:.8em}}
+.pf-method .pf-mtop{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);align-items:center}
+.pf-method .pf-mtop .stats{margin-top:0;grid-template-columns:repeat(2,minmax(0,1fr))}
+.pf-method .pf-mtop .stat:nth-child(2n){border-right:0}
+.pf-method .pf-mtop .stat:nth-child(-n+2){border-bottom:1px dashed var(--line)}
+.pf-method .pf-mtop .stat{padding:22px 22px 24px}
+@media (max-width:960px){.pf-method .pf-mtop{grid-template-columns:1fr;gap:24px}}
+.pf-method .hero h1 em{font-size:.82em}
+/* 方法论页首 v3：单栏，数字行仿首页 */
+.pf-method .pf-mhero{padding-block:56px 8px}
+.pf-method .pf-mhero h1{font-size:clamp(34px,5vw,60px);line-height:1.1;margin:16px 0 20px}
+.pf-method .pf-mhero h1 em{display:block;font-size:.8em;margin-top:.15em}
+.pf-method .pf-mhero .lede{max-width:36em;font-size:17px;line-height:1.8}
+.pf-method .pf-nums{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:44px;border-top:1px solid var(--ink)}
+.pf-method .pf-nums .stat{padding:18px 20px 0 0;border:0;min-width:0}
+.pf-method .pf-nums .stat + .stat{padding-left:20px;border-left:1px solid var(--line)}
+.pf-method .pf-nums .stat b{font-family:var(--f-serif);font-weight:800;font-size:clamp(32px,3.6vw,46px);line-height:1}
+.pf-method .pf-nums .stat span{margin-top:10px;font-size:13px;line-height:1.6}
+@media (max-width:760px){
+  .pf-method .pf-nums{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:22px}
+  .pf-method .pf-nums .stat:nth-child(3){padding-left:0;border-left:0}
+}

@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>周靖达 · IP 编导 / 操盘手</title>
+<meta name="description" content="周靖达，获客型 IP 编导 / 操盘手。情感 IP 雪野lovetactic 抖音粉丝 1 万到 40 万+；大健康 IP 8 个月从 2 千到 10 万。">
+<style>
+@font-face{font-family:"PF Serif";src:url("assets/fonts/serif-subset.woff2") format("woff2");font-weight:200 900;font-display:swap}
+@font-face{font-family:"PF Sans";src:url("assets/fonts/sans-hero.woff2") format("woff2");font-weight:100 900;font-display:swap}
+:root{
+  --paper:#F2EEE6; --paper-2:#E9E3D8; --ink:#1D221E; --muted:#5F665F; --faint:#8E928A; --rule:#CFC7B8;
+  --sage:#56634B; --sage-soft:#DDE2D3; --wood:#9C6B3E;
+  --serif:"PF Serif","Noto Serif SC","Source Han Serif SC","Songti SC",serif;
+  --sans:"PingFang SC","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+  --mono:ui-monospace,"SFMono-Regular",Consolas,monospace;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.page{max-width:1240px;margin:0 auto;padding-inline:16px}
+@media (min-width:760px){.page{padding-inline:40px}}
+
+/* 刊头 */
+.mast{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px;padding-block:18px 12px;border-bottom:1px solid var(--ink);font-size:12.5px;letter-spacing:.06em}
+.mast .l{font-family:var(--serif);font-weight:700;font-size:15px;letter-spacing:.02em}
+.mast .c{font-family:var(--mono);font-size:11.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.18em}
+.mast .r{justify-self:end}
+.mast .r .btn{display:inline-block;text-decoration:none;background:var(--ink);color:var(--paper);padding:5px 16px;border-radius:999px;font-size:12.5px;letter-spacing:.08em}
+.mast .r .btn:hover{background:var(--sage)}
+.sub{display:flex;justify-content:space-between;gap:12px;padding-block:7px;border-bottom:1px solid var(--rule);font-size:12px;color:var(--muted)}
+
+/* 首屏主体 */
+.cover{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:72px;padding-block:64px 56px;align-items:stretch}
+.text{display:flex;flex-direction:column;min-width:0}
+.role{display:flex;align-items:center;gap:14px;font-size:13px;letter-spacing:.14em;color:var(--sage);font-weight:600}
+.role::after{content:"";flex:1;height:1px;background:var(--sage);opacity:.45}
+h1{margin:22px 0 0;font-family:var(--serif);font-weight:700;line-height:1;letter-spacing:0}
+h1 .name{display:block;font-size:clamp(80px,10.5vw,140px);font-weight:500;letter-spacing:.04em}
+h1 .what{display:block;margin-top:18px;font-family:"PF Sans",var(--sans,sans-serif);font-size:clamp(24px,3vw,38px);font-weight:500;letter-spacing:.02em;line-height:1.25;color:var(--sage)}
+.nw{display:inline-block}
+.deck{margin:28px 0 0;max-width:30em;font-size:17px;line-height:1.85;color:var(--muted)}
+.deck b{font-weight:600}
+
+.nums{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:auto;padding-top:36px}
+.num{padding:16px 16px 0 0;border-top:1px solid var(--ink);min-width:0}
+.num + .num{padding-left:16px;border-left:1px solid var(--rule)}
+.num b{display:block;font-family:var(--serif);font-weight:800;font-size:clamp(30px,3.4vw,42px);line-height:1.05;font-variant-numeric:tabular-nums;white-space:nowrap}
+.num strong{display:block;margin-top:8px;font-size:14px;font-weight:600}
+.num span{display:block;margin-top:8px;font-size:13px;line-height:1.5;color:var(--muted)}
+
+/* 照片 */
+.photo{margin:0;display:flex;flex-direction:column;min-width:0}
+.photo .frame{position:relative;flex:1;min-height:420px;overflow:hidden;border-radius:8px;background:var(--paper-2)}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.photo figcaption{display:flex;justify-content:space-between;gap:12px;padding-top:10px;font-size:12px;color:var(--muted)}
+.photo figcaption i{font-style:normal;font-family:var(--serif)}
+
+/* 目录 */
+.toc{display:grid;grid-template-columns:auto repeat(5,minmax(0,1fr));border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);margin-bottom:56px}
+.toc .h{padding:14px 24px 14px 0;font-family:var(--serif);font-weight:700;font-size:15px;display:flex;align-items:center}
+.toc a{padding:14px 16px;border-left:1px solid var(--rule);text-decoration:none;display:grid;gap:2px;min-width:0}
+.toc a:hover{background:var(--paper-2)}
+.toc .no{font-family:var(--mono);font-size:11px;color:var(--wood);letter-spacing:.1em}
+.toc .t{font-size:14px;font-weight:500;line-height:1.4}
+
+
+@media (max-width:960px){
+  .cover{grid-template-columns:1fr;gap:28px;padding-top:24px}
+  .photo{order:-1}
+  .photo .frame{min-height:0;aspect-ratio:5/4}
+  .photo img{object-position:50% 35%}
+  .nums{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:22px}
+  .num:nth-child(3){padding-left:0;border-left:0}
+  .toc{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .toc .h{grid-column:1/-1;border-bottom:1px solid var(--rule)}
+  .toc a{border-top:1px solid var(--rule)}
+  .toc a:nth-of-type(odd){border-left:0;padding-left:0}
+}
+@media (max-width:520px){
+  .mast{grid-template-columns:1fr auto}
+  .mast .c{display:none}
+  .sub span:last-child{display:none}
+  .deck{font-size:16px}
+}
+
+/* 板块通用 */
+.sec{padding-block:24px 72px;scroll-margin-top:16px}
+.sec-h{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:72px;align-items:end;padding-bottom:28px;border-bottom:1px solid var(--rule);margin-bottom:32px}
+.sec-h .no{font-family:var(--mono);font-size:12px;color:var(--wood);letter-spacing:.14em}
+.sec-h h2{margin:10px 0 0;font-family:var(--serif);font-weight:800;font-size:clamp(30px,4vw,52px);line-height:1.15;letter-spacing:-.01em}
+.sec-h p{margin:0;color:var(--muted);font-size:15.5px;max-width:28em}
+
+/* AI 三栏 */
+.ai{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.ai-c{display:flex;flex-direction:column;min-width:0}
+.ai-c h3{margin:0;font-family:var(--serif);font-weight:700;font-size:21px;line-height:1.35}
+.ai-c .say{margin:8px 0 16px;color:var(--muted);font-size:14px;line-height:1.7;min-height:3.4em}
+.win{flex:1;background:#FBF9F4;border:1px solid var(--rule);border-radius:6px;overflow:hidden;display:flex;flex-direction:column}
+.win .bar{display:flex;justify-content:space-between;align-items:center;gap:8px;height:38px;padding:0 16px;border-bottom:1px solid var(--rule);background:var(--paper-2);font-family:var(--mono);font-size:11.5px;color:var(--muted);white-space:nowrap;overflow:hidden}
+.rows{padding:10px 16px 14px;font-size:13.5px}
+.rows .th{height:30px;display:flex;align-items:flex-end;padding-bottom:4px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--wood);border-bottom:1px solid var(--paper-2)}
+.rows .th:not(:first-child){margin-top:6px}
+.rows .r{height:32px;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:12px}
+.rows .l{display:flex;align-items:center;gap:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.rows .m{font-size:12.5px;color:var(--faint);white-space:nowrap}
+.rows b{font-weight:600}
+.rows .m b{color:var(--wood);font-weight:600;font-family:var(--mono)}
+.rows code{font-family:var(--mono);font-size:12.5px;color:var(--ink)}
+.rows .dot{font-size:9px;color:var(--faint);width:10px;flex:none}
+.rows .dot.on{color:var(--sage)}
+.win .bar .dot{font-size:9px;color:var(--faint)}.win .bar .dot.on{color:var(--sage)}
+.rows i{flex:none;font-style:normal;width:26px;height:19px;display:inline-flex;align-items:center;justify-content:center;border-radius:3px;font-family:var(--mono);font-size:10.5px;background:var(--paper-2);color:var(--muted)}
+.rows i.me{background:var(--sage);color:var(--paper)}
+.win .note{margin-top:auto;padding:12px 16px 16px;border-top:1px dashed var(--rule);font-size:12.5px;line-height:1.75;color:var(--muted)}
+.win .note .nh{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--wood);margin-bottom:2px}
+@media (max-width:960px){
+  .sec-h{grid-template-columns:1fr;gap:12px}
+  .ai{grid-template-columns:1fr;gap:36px}
+  .ai-c .say{min-height:0}
+}
+
+/* 01 结果 */
+.acc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.acc-c{display:grid;grid-template-columns:minmax(0,1fr) 200px;gap:24px;padding:24px;background:#FBF9F4;border:1px solid var(--rule);border-radius:6px;min-width:0}
+.acc-c .tag{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--wood)}
+.acc-c h3{margin:6px 0 2px;font-family:var(--serif);font-weight:800;font-size:24px;line-height:1.3}
+.acc-c .role{margin:0;font-size:13px;color:var(--muted)}
+.acc-c .big{margin:22px 0 4px;font-family:var(--serif);font-weight:800;font-size:clamp(34px,3.4vw,46px);line-height:1;white-space:nowrap}
+.acc-c .big small{display:block;margin-top:8px;font-family:var(--sans);font-weight:400;font-size:13px;color:var(--muted)}
+.acc-c .big .arr{color:var(--faint);font-weight:400;margin:0 .15em}
+.acc-c dl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:22px 0 0;border-top:1px solid var(--rule)}
+.acc-c dl div{padding:12px 12px 0 0;min-width:0}
+.acc-c dl div + div{padding-left:12px;border-left:1px solid var(--paper-2)}
+.acc-c dt{font-family:var(--serif);font-weight:800;font-size:20px;line-height:1.2;white-space:nowrap}
+.acc-c dd{margin:4px 0 0;font-size:12.5px;color:var(--muted);line-height:1.5}
+.phone{margin:0;align-self:start;aspect-ratio:900/945;overflow:hidden;border-radius:10px;border:1px solid var(--rule);background:var(--paper-2)}
+.phone img{width:100%;height:100%;object-fit:cover;object-position:top}
+
+
+/* 02 转化 */
+.fun{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0}
+.fs{position:relative;padding:4px 18px 0 0;display:flex;flex-direction:column;min-width:0}
+.fs + .fs{padding-left:18px;border-left:1px solid var(--rule)}
+.fs .no{font-family:var(--mono);font-size:11px;color:var(--wood);letter-spacing:.1em}
+.fs h3{margin:6px 0 6px;font-family:var(--serif);font-weight:700;font-size:19px;line-height:1.35}
+.fs p{margin:0 0 14px;min-height:5.2em;font-size:13.5px;line-height:1.7;color:var(--muted)}
+.fs p b{color:var(--ink);font-weight:600}
+.fs .shot{margin:0;aspect-ratio:5/4;border:1px solid var(--rule);border-radius:6px;overflow:hidden;background:#161616}
+.fs .shot img{display:block;width:100%;height:100%;object-fit:contain}
+.fs .shot.cm{background:#1f1f1f}
+.fs .shot.gp{background:#efefef}
+.fs .shot.gp img{object-fit:cover;object-position:top}
+.fs .end{margin:0;padding:18px;border-radius:6px;background:var(--sage);color:var(--paper)}
+.fs .end b{display:block;font-family:var(--serif);font-weight:800;font-size:34px;line-height:1.1}
+.fs .end span{font-size:12.5px;opacity:.85}
+.fs .pill{margin:0;display:grid;gap:8px}
+.fs .pill span{display:block;padding:10px 12px;border:1px solid var(--rule);border-radius:6px;background:#FBF9F4;font-size:13px}
+.fs .pill span{line-height:1.6}
+.fs .pill span i{display:block;font-style:normal;font-family:var(--mono);font-size:11px;color:var(--wood);margin-right:8px}
+.fun-note{margin:18px 0 0;font-size:12.5px;color:var(--faint)}
+
+/* 03 代表作品 */
+.works{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.wk{display:flex;flex-direction:column;min-width:0}
+@supports (grid-template-rows:subgrid){.works{row-gap:0}.wk{display:grid;grid-row:span 6;grid-template-rows:subgrid;align-content:start}.works .wk{padding-bottom:0}}
+.wk .cov{margin:0;aspect-ratio:16/9;overflow:hidden;border-radius:6px;border:1px solid var(--rule);background:var(--paper-2)}
+.wk .cov img{width:100%;height:100%;object-fit:cover}
+.wk .meta{display:flex;justify-content:space-between;gap:8px;margin-top:14px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--wood)}
+.wk h3{margin:6px 0 0;font-family:var(--serif);font-weight:700;font-size:clamp(15px,calc(min(100vw,1253px)*.015 - 2.2px),17px);line-height:1.45;letter-spacing:-.01em;text-wrap:balance}
+.wk .data{margin:8px 0 0;font-size:12.5px;color:var(--muted)}
+.wk .data b{font-family:var(--serif);font-weight:800;font-size:17px;color:var(--ink);margin-right:2px}
+.wk .why{margin:12px 0 0;padding-top:12px;border-top:1px solid var(--rule);font-size:13.5px;line-height:1.75}
+.wk .go{margin-top:auto;padding-top:14px;font-size:13px;align-self:end}
+.wk .go a{text-decoration:none;border-bottom:1px solid var(--rule)}
+.wk .go a:hover{border-color:var(--ink)}
+
+@media (max-width:1100px){
+  .fun{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:32px}
+  .fs:nth-child(4){padding-left:0;border-left:0}
+}
+@media (max-width:1180px){
+  .acc{grid-template-columns:1fr}
+}
+@media (max-width:960px){
+  .works{grid-template-columns:1fr;gap:40px}
+  .works .wk{display:flex;grid-row:auto}
+  .wk h3{font-size:16px}
+}
+@media (max-width:620px){
+  .acc-c{grid-template-columns:1fr}
+  .phone{max-width:300px}
+  .fun{grid-template-columns:1fr}
+  .fs,.fs + .fs{padding:18px 0 0;border-left:0;border-top:1px solid var(--rule)}
+  .fs:first-child{border-top:0;padding-top:0}
+  .fs p{min-height:0}
+}
+
+/* 05 研究库 */
+.arc{margin-top:-33px}
+.arc a{display:grid;grid-template-columns:3.5em minmax(0,15em) minmax(0,9em) minmax(0,1fr) 2em;gap:24px;align-items:baseline;padding:22px 0;border-bottom:1px solid var(--rule);text-decoration:none;color:inherit;transition:background .15s}
+.arc a:hover{background:var(--paper-2)}
+.arc .n{font-family:var(--mono);font-size:12px;color:var(--wood);letter-spacing:.1em;padding-left:4px}
+.arc h3{margin:0;font-family:var(--serif);font-weight:700;font-size:21px;line-height:1.35}
+.arc .k{font-family:var(--serif);font-weight:800;font-size:22px;white-space:nowrap}
+.arc .k small{font-family:var(--sans);font-weight:400;font-size:12.5px;color:var(--muted);margin-left:4px}
+.arc p{margin:0;font-size:14px;color:var(--muted);line-height:1.7}
+.arc .go{font-size:18px;color:var(--sage);text-align:right;padding-right:4px}
+@media (max-width:860px){
+  .arc a{grid-template-columns:2.6em minmax(0,1fr) auto;gap:6px 14px}
+  .arc .k{grid-column:2;grid-row:2}
+  .arc p{grid-column:2/-1;grid-row:3}
+  .arc .go{grid-column:3;grid-row:1}
+}
+
+/* 联系：深色收尾 */
+.contact{background:#191B18;color:var(--paper);padding:88px 16px 40px;scroll-margin-top:0}
+.contact .in{max-width:1000px;margin:0 auto}
+.contact .k{display:block;text-align:center;font-family:var(--mono);font-size:11.5px;letter-spacing:.2em;color:#C9A27A}
+.contact h2{margin:14px 0 0;text-align:center;font-family:var(--serif);font-weight:800;font-size:clamp(30px,4.4vw,52px);line-height:1.2}
+.contact .lede{margin:14px auto 0;max-width:30em;text-align:center;color:#A7AAA1;font-size:15px}
+.wx{margin:48px auto 0;max-width:780px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:40px;align-items:center;padding:36px 40px;background:var(--paper);color:var(--ink);border-radius:14px}
+.wx .t{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--wood)}
+.wx h3{margin:10px 0 0;font-family:var(--serif);font-weight:800;font-size:30px;line-height:1.25}
+.wx p{margin:12px 0 0;color:var(--muted);font-size:14.5px;line-height:1.75}
+.wx .pill{display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:6px 14px;border-radius:999px;background:var(--paper-2);font-size:13px}
+.wx .pill::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--sage)}
+.wx figure{margin:0;display:grid;gap:10px;justify-items:center}
+.wx figure img{width:196px;height:196px;padding:14px;background:#fff;border:1px solid var(--rule);border-radius:10px}
+.wx figcaption{font-size:12px;color:var(--muted)}
+.cards{margin:20px auto 0;max-width:1000px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.cards > *{display:block;padding:20px 22px;border:1px solid #30342F;border-radius:10px;background:#222521;color:var(--paper);text-decoration:none;min-width:0}
+.cards a:hover{border-color:#7D8C6E}
+.cards span{display:block;font-size:12px;color:#8F948B}
+.cards b{display:block;margin-top:8px;font-weight:500;font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.foot{margin:56px auto 0;max-width:1000px;display:flex;justify-content:space-between;gap:12px;padding-top:18px;border-top:1px solid #30342F;font-size:12px;color:#8F948B}
+.foot a{color:inherit;text-decoration:none}
+@media (max-width:760px){
+  .contact{padding-top:64px}
+  .wx{grid-template-columns:1fr;gap:24px;padding:28px 24px;text-align:center}
+  .wx .pill{margin-inline:auto}
+  .cards{grid-template-columns:1fr}
+}
+
+/* 深色板块：AI 与联系，形成明暗节奏 */
+.sec.dark{background:#191B18;color:var(--paper);box-shadow:0 0 0 100vmax #191B18;clip-path:inset(0 -100vmax);padding-top:72px;margin-top:24px}
+.sec.dark .sec-h{border-bottom-color:#30342F}
+.sec.dark .sec-h .no{color:#C9A27A}
+.sec.dark .sec-h p,.sec.dark .ai-c .say{color:#A7AAA1}
+.sec.dark .win{background:#222521;border-color:#30342F}
+.sec.dark .win .bar{background:#2A2D29;border-bottom-color:#30342F;color:#A7AAA1}
+.sec.dark .rows .th{color:#C9A27A;border-bottom-color:#30342F}
+.sec.dark .rows .m{color:#8F948B}
+.sec.dark .rows .m b{color:#C9A27A}
+.sec.dark .rows code{color:var(--paper)}
+.sec.dark .rows i{background:#353932;color:#C4C7BE}
+.sec.dark .rows i.me,.sec.dark .rows .dot.on,.sec.dark .win .bar .dot.on{background:#7D8C6E;color:var(--paper)}
+.sec.dark .rows .dot.on,.sec.dark .win .bar .dot.on{background:none;color:#9DAE8B}
+.sec.dark .win .note{border-top-color:#30342F;color:#A7AAA1}
+.sec.dark .win .note .nh{color:#C9A27A}
+
+/* ===== 精修层：只调质感与交互，不动版式和间距 ===== */
+html{scroll-behavior:smooth}
+::selection{background:#DDE2D3;color:var(--ink)}
+:root{--sh-1:0 1px 2px rgba(29,34,30,.05),0 10px 28px -16px rgba(29,34,30,.18);--sh-2:0 2px 4px rgba(29,34,30,.06),0 18px 40px -18px rgba(29,34,30,.28)}
+/* 卡片：柔和投影，可点的卡片悬停微微上浮 */
+.acc-c,.win,.fs .pill span,.wx{box-shadow:var(--sh-1)}
+.acc-c{transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
+.acc-c:hover{transform:translateY(-3px);box-shadow:var(--sh-2)}
+/* 图片：统一细边＋投影；作品封面悬停轻微放大 */
+.phone,.fs .shot,.wk .cov,.photo .frame{box-shadow:var(--sh-1)}
+.wk .cov img{transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.wk:hover .cov img{transform:scale(1.035)}
+.wk .cov{transition:box-shadow .35s}
+.wk:hover .cov{box-shadow:var(--sh-2)}
+/* 链接：下划线从左到右展开 */
+.wk .go a{border-bottom:0;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat,linear-gradient(var(--rule),var(--rule)) 0 100%/100% 1px no-repeat;padding-bottom:2px;transition:background-size .35s}
+.wk .go a:hover{background-size:100% 1px,100% 1px}
+/* 目录：悬停出现下划线指示 */
+.toc a{position:relative;transition:background .25s}
+.toc a::after{content:"";position:absolute;left:16px;right:16px;bottom:0;height:2px;background:var(--sage);transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.toc a:hover::after{transform:scaleX(1)}
+/* 研究库：悬停时箭头前移 */
+.arc .go{transition:transform .3s cubic-bezier(.2,.7,.2,1)}
+.arc a:hover .go{transform:translateX(6px)}
+/* 数字：等宽数字，标题字距收紧一点 */
+.num b,.acc-c .big,.acc-c dt,.wk .data b,.arc .k{font-variant-numeric:tabular-nums}
+.sec-h h2{letter-spacing:-.015em}
+/* 深色区卡片：顶部一道细高光，增加层次 */
+.sec.dark .win{box-shadow:inset 0 1px 0 rgba(255,255,255,.04),0 18px 40px -24px rgba(0,0,0,.6)}
+.cards > *{transition:border-color .25s,transform .3s}
+.cards a:hover{transform:translateY(-2px)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+/* 层次：第 02 板块铺浅色色带；其余间距保持原版，只补色带边缘的留白 */
+.sec.band{background:var(--paper-2);box-shadow:0 0 0 100vmax var(--paper-2);clip-path:inset(0 -100vmax);padding-block:56px 64px}
+.sec.band .sec-h{border-bottom-color:#D6CEC0}
+.sec.band + .sec{padding-top:64px}
+@media (max-width:760px){.sec.band{padding-block:44px 52px}.sec.band + .sec{padding-top:48px}}
+
+
+/* 账号卡：抖音主页链接 */
+.acc-c .home{display:inline-flex;align-items:center;gap:6px;margin-top:20px;padding:6px 14px;border:1px solid var(--rule);border-radius:999px;font-size:13px;color:var(--ink);text-decoration:none;transition:border-color .25s,background .25s}
+.acc-c .home:hover{border-color:var(--sage);background:#fff}
+a.phone{display:block;transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+a.phone:hover{transform:translateY(-2px)}
+
+/* 账号卡：左右协调——截图放大并与左栏垂直居中，按钮压到底部对齐 */
+.acc-c{grid-template-columns:minmax(0,1fr) 236px;align-items:center}
+.acc-c > div:first-child{display:flex;flex-direction:column;align-self:stretch}
+.acc-c .home{align-self:flex-start;margin-top:auto}
+.acc-c dl{margin-bottom:22px}
+.acc-c dd{white-space:nowrap}
+.acc-c .phone{align-self:center}
+@media (max-width:620px){.acc-c{grid-template-columns:1fr}.acc-c .home{margin-top:4px}}
+
+/* 账号卡左栏字号收一档 */
+.acc-c h3{font-size:22px}
+.acc-c .big{font-size:clamp(30px,3vw,40px);margin-top:18px}
+.acc-c dt{font-size:18px}
+.acc-c dd{font-size:12px}
+</style>
+</head>
+<body id="top">
+<div class="page">
+
+  <header class="mast">
+    <span class="l">周靖达 · IP 编导</span>
+    <span class="c">Portfolio · 2026</span>
+    <span class="r"><a class="btn" href="#contact">联系我</a></span>
+  </header>
+  <main class="cover">
+    <div class="text">
+      <div class="role">获客型 IP 编导 / 操盘手</div>
+      <h1><span class="name">周靖达</span><span class="what"><span class="nw">内容的终点，</span><span class="nw">是成交</span></span></h1>
+      <p class="deck">主导情感 IP「雪野」的定位、选题与文案，一年从 <span class="nw">1 万粉</span>做到 <span class="nw">40 万粉</span>；也全链路做过<span class="nw">大健康 IP。</span></p>
+      <div class="nums" role="list">
+        <div class="num" role="listitem"><b>40万+</b><span>雪野 抖音粉丝</span></div>
+        <div class="num" role="listitem"><b>45.6万</b><span>单条最高点赞</span></div>
+        <div class="num" role="listitem"><b>30万+</b><span>雪野 单月变现</span></div>
+        <div class="num" role="listitem"><b>10万+</b><span>控糖张主任 粉丝</span></div>
+      </div>
+    </div>
+
+    <figure class="photo">
+      <div class="frame"><img src="assets/img/portrait.webp" alt="周靖达坐在沙发上读书" width="1086" height="1448"></div>
+    </figure>
+  </main>
+
+  <nav class="toc" aria-label="目录">
+    <span class="h">本册目录</span>
+    <a href="#results"><span class="no">01</span><span class="t">两个账号的结果</span></a>
+    <a href="#funnel"><span class="no">02</span><span class="t">内容怎么变成咨询</span></a>
+    <a href="#works"><span class="no">03</span><span class="t">代表作品</span></a>
+    <a href="#ai"><span class="no">04</span><span class="t">AI 怎么进到我的工作里</span></a>
+    <a href="#archive"><span class="no">05</span><span class="t">研究库与方法论</span></a>
+  </nav>
+
+  <section class="sec" id="results" aria-labelledby="h-results">
+    <div class="sec-h">
+      <div><span class="no">01 · RESULTS</span><h2 id="h-results">两个账号的结果</h2></div>
+      <p>情感 IP 主导账号定位、选题体系与文案生产；大健康 IP 全链路负责短视频制作，从选题、文案到拍摄剪辑。</p>
+    </div>
+    <div class="acc">
+      <article class="acc-c">
+        <div>
+          <span class="tag">情感咨询 IP · 2025.10 – 2026.10</span>
+          <h3>雪野lovetactic</h3>
+          <p class="role">IP 编导</p>
+          <p class="big">1万<span class="arr">→</span>40万+<small>抖音粉丝</small></p>
+          <dl>
+            <div><dt>45.6万</dt><dd>单条最高点赞</dd></div>
+            <div><dt>30万+</dt><dd>单月变现</dd></div>
+            <div><dt>18万</dt><dd>B 站粉丝</dd></div>
+          </dl>
+          <a class="home" href="https://www.douyin.com/user/MS4wLjABAAAAUReURlWA7_OelgoR4mLsXTy7u8jhvCwMMBKAXaNhnOf7p6SNPzZ8YjUKnwQggHpz" target="_blank" rel="noopener">查看抖音主页 ↗</a>
+        </div>
+        <a class="phone" href="https://www.douyin.com/user/MS4wLjABAAAAUReURlWA7_OelgoR4mLsXTy7u8jhvCwMMBKAXaNhnOf7p6SNPzZ8YjUKnwQggHpz" target="_blank" rel="noopener" aria-label="打开雪野lovetactic 抖音主页"><img src="assets/img/xueye-home.webp" alt="雪野lovetactic 抖音主页截图" loading="lazy" width="900" height="945"></a>
+      </article>
+      <article class="acc-c">
+        <div>
+          <span class="tag">大健康 IP · 2024.10 – 2025.10</span>
+          <h3>控糖营养师张主任</h3>
+          <p class="role">新媒体运营 · 短视频全流程制作</p>
+          <p class="big">2千<span class="arr">→</span>10万+<small>8 个月</small></p>
+          <dl>
+            <div><dt>626.2万</dt><dd>单条播放</dd></div>
+            <div><dt>60万+</dt><dd>直播月均 GMV</dd></div>
+            <div><dt>3–4 条</dt><dd>每周更新</dd></div>
+          </dl>
+          <a class="home" href="https://v.douyin.com/1TlR_loAtx4/" target="_blank" rel="noopener">查看抖音主页 ↗</a>
+        </div>
+        <a class="phone" href="https://v.douyin.com/1TlR_loAtx4/" target="_blank" rel="noopener" aria-label="打开控糖营养师张主任抖音主页"><img src="assets/img/kt-home.webp" alt="控糖营养师张主任抖音主页截图" loading="lazy" width="900" height="945"></a>
+      </article>
+    </div>
+  </section>
+
+  <section class="sec band" id="funnel" aria-labelledby="h-funnel">
+    <div class="sec-h">
+      <div><span class="no">02 · CONVERSION</span><h2 id="h-funnel">内容怎么变成咨询</h2></div>
+      <p>从公域引到私域：抖音靠粉丝群承接，再由群内转一对一。</p>
+    </div>
+    <div class="fun">
+      <div class="fs">
+        <span class="no">01</span><h3>选题</h3>
+        <p>以获客为前提做选题，约<b>七成</b>能直接导向咨询产品。</p>
+        <div class="pill"><span><i>讲给谁</i>在一段关系里投入不少、卡在要做决定的节点、看不清对方的男性用户</span><span><i>导向</i>一对一咨询、陪跑</span></div>
+      </div>
+      <div class="fs">
+        <span class="no">02</span><h3>主页</h3>
+        <p>简介写明“咨询&amp;问题 进公开群”，主页挂群聊入口。</p>
+        <figure class="shot"><img src="assets/img/funnel-home.webp" alt="雪野抖音主页的加入群聊入口" loading="lazy" width="507" height="168"></figure>
+      </div>
+      <div class="fs">
+        <span class="no">03</span><h3>评论区</h3>
+        <p>作者在评论区回复，引导进粉丝群“领取 1V1 江湖救急”。</p>
+        <figure class="shot cm"><img src="assets/img/funnel-comment.webp" alt="作者在评论区引导进粉丝群" loading="lazy" width="418" height="377"></figure>
+      </div>
+      <div class="fs">
+        <span class="no">04</span><h3>粉丝群</h3>
+        <p>新人入群后，管理员发“点我联系雪野老师”卡片，转到一对一。</p>
+        <figure class="shot gp"><img src="assets/img/funnel-group-crop.webp" alt="新成员入群后，管理员发送联系雪野老师的卡片" loading="lazy" width="800" height="640"></figure>
+      </div>
+      <div class="fs">
+        <span class="no">05</span><h3>成交</h3>
+        <p>一对一咨询和陪跑。</p>
+        <div class="end"><b>30万+</b><span>账号单月变现</span></div>
+      </div>
+    </div>
+    <p class="fun-note">群内用户昵称已打码。</p>
+  </section>
+
+  <section class="sec" id="works" aria-labelledby="h-works">
+    <div class="sec-h">
+      <div><span class="no">03 · WORKS</span><h2 id="h-works">代表作品</h2></div>
+      <p>三类作品，三种做法：观点合集、白板讲解、学员案例。</p>
+    </div>
+    <div class="works">
+      <article class="wk">
+        <figure class="cov"><img src="assets/img/work-4min.webp" alt="《4分钟，升级你的情感认知》开头画面" loading="lazy" width="1200" height="676"></figure>
+        <div class="meta"><span>观点合集</span><span>2026.07</span></div>
+        <h3>4分钟，升级你的情感认知</h3>
+        <p class="data"><b>45.6万</b> 赞 · <b>11.9万</b> 收藏 · <b>19.7万</b> 转发</p>
+        <p class="why">借用 B 站爆款开头“看之前，不就是个xxx吗”；正文从 30 多条旧作品里挑出金句，围绕“别靠付出换爱，要靠高位”一条线重新编排。</p>
+        <p class="go"><a href="https://v.douyin.com/y1ZKulR_u_A/" target="_blank" rel="noopener">看视频 ↗</a></p>
+      </article>
+      <article class="wk">
+        <figure class="cov"><img src="assets/img/work-sanguan.webp" alt="《三观背调》白板讲解画面" loading="lazy" width="1200" height="673"></figure>
+        <div class="meta"><span>白板讲解</span><span>2025.11</span></div>
+        <h3>三观背调：确认关系前，你必须要问的三个问题</h3>
+        <p class="data">时长 <b>6分55秒</b> · 白板讲三个问题</p>
+        <p class="why">把三个问题提前写在白板上，观众一眼就知道这条要讲什么、讲得有多深，用画面制造信息预期。</p>
+        <p class="go"><a href="https://v.douyin.com/RmHOJgPQ8TY/" target="_blank" rel="noopener">看视频 ↗</a></p>
+      </article>
+      <article class="wk">
+        <figure class="cov"><img src="assets/img/work-case.webp" alt="《为什么你越顺着她，她越不喜欢你？》学员聊天记录复盘画面" loading="lazy" width="1200" height="674"></figure>
+        <div class="meta"><span>学员案例</span><span>2026.03</span></div>
+        <h3>为什么你越顺着她，她越不喜欢你？</h3>
+        <p class="data"><b>1.9万</b> 赞 · <b>7,401</b> 收藏 · <b>3,030</b> 转发</p>
+        <p class="why">用学员真实聊天记录复盘（已征得同意并打码）。观众看到的是一次咨询怎么解决问题，内容本身就在展示服务。</p>
+        <p class="go"><a href="https://v.douyin.com/HrPFm2BxSC4/" target="_blank" rel="noopener">看视频 ↗</a></p>
+      </article>
+    </div>
+  </section>
+
+  <section class="sec dark" id="ai" aria-labelledby="h-ai">
+    <div class="sec-h">
+      <div><span class="no">04 · AI WORKFLOW</span><h2 id="h-ai">AI 怎么进到<br>我的工作里</h2></div>
+      <p>我不拿 AI 直接写稿，而是用 Claude Code 和 Codex 搭了一套内容生产体系：知识库、skill 库、生产流程。下面三张都来自我的本地文件。</p>
+    </div>
+    <div class="ai">
+<div class="ai-c"><h3>一个给 AI 读的知识库</h3><p class="say">多个同赛道账号 1800+ 篇文案，配一份调用规则，AI 每次查资料都按同一套规矩来。</p><div class="win"><div class="bar"><span>情感咨询IP知识库/</span><span>本地</span></div><div class="rows">
+<div class="th">规则</div>
+<div class="r"><span class="l"><code>AGENTS.md</code></span><span class="m">给 AI 的调用规则</span></div>
+<div class="r"><span class="l"><code>SOURCE_OF_TRUTH.md</code></span><span class="m">导航与版本</span></div>
+<div class="th">账号资料</div>
+<div class="r"><span class="l">自有 IP</span><span class="m"><b>462</b> 篇</span></div>
+<div class="r"><span class="l">浩威Loveology</span><span class="m"><b>1,157</b> 篇</span></div>
+<div class="r"><span class="l">子阳代你破局</span><span class="m"><b>256</b> 篇</span></div>
+<div class="th">研究产出</div>
+<div class="r"><span class="l"><code>outputs/</code></span><span class="m"><b>19</b> 项</span></div>
+</div>
+<div class="note"><span class="nh">AGENTS.md 节选</span>作品仅按作品 ID 匹配，缺失值不填零；不混淆原始文案、图文补充和分析；不改写原始正文。</div>
+</div></div>
+<div class="ai-c"><h3>一套覆盖全流程的 skill 库</h3><p class="say">把开源 skill 和自建 skill 整合成一套工具链，从定位、选题到成稿、发布前检查，每一步都有对应工具。</p><div class="win"><div class="bar"><span>skills/</span><span><span class="dot on">●</span> 自建　<span class="dot">○</span> 开源</span></div><div class="rows">
+<div class="th">定位</div>
+<div class="r"><span class="l"><span class="dot">○</span>产品人群定位 · 人设定位</span><span class="m">获客型 IP</span></div>
+<div class="th">选题</div>
+<div class="r"><span class="l"><span class="dot on">●</span><b>用户遭遇还原</b></span><span class="m"><b>318</b> 组遭遇</span></div>
+<div class="r"><span class="l"><span class="dot on">●</span><b>底层需求拆解</b></span><span class="m"><b>291</b> 组需求</span></div>
+<div class="th">文案</div>
+<div class="r"><span class="l"><span class="dot on">●</span><b>口播写稿</b></span><span class="m">通用流程 + 账号包</span></div>
+<div class="r"><span class="l"><span class="dot on">●</span><b>IP 观点拆解 · 案例复盘</b></span><span class="m">IP 文风</span></div>
+<div class="r"><span class="l"><span class="dot">○</span>内容深化</span><span class="m">获客型 IP</span></div>
+<div class="th">发布前</div>
+<div class="r"><span class="l"><span class="dot">○</span>标题封面开头 · 风险检查</span><span class="m">dbskill</span></div>
+</div>
+</div></div>
+<div class="ai-c"><h3>人定方向，AI 跑重活</h3><p class="say">一条内容从用户遭遇到发布，判断留给我，整理、拆解、起稿交给 AI。</p><div class="win"><div class="bar"><span>一条内容的生产流程</span><span>5 步</span></div><div class="rows">
+<div class="th">01 遭遇</div>
+<div class="r"><span class="l"><i>AI</i>从评论、同行内容里扩充遭遇清单</span><span class="m"></span></div>
+<div class="r"><span class="l"><i class="me">我</i>筛出真实、能落到产品的</span><span class="m"></span></div>
+<div class="th">02 需求</div>
+<div class="r"><span class="l"><i>AI</i>拆表面问题和底层需求</span><span class="m"></span></div>
+<div class="r"><span class="l"><i class="me">我</i>判断能不能接到咨询</span><span class="m"></span></div>
+<div class="th">03 选题</div>
+<div class="r"><span class="l"><i class="me">我</i>定选题、讲给谁、导流方式</span><span class="m"></span></div>
+<div class="th">04 起稿</div>
+<div class="r"><span class="l"><i>AI</i>按 IP 的立场和文风写初稿</span><span class="m"></span></div>
+<div class="th">05 定稿</div>
+<div class="r"><span class="l"><i class="me">我</i>改稿</span><span class="m"></span></div>
+<div class="r"><span class="l"><i>AI</i>查标题、开头和违规风险</span><span class="m"></span></div>
+</div>
+</div></div>
+</div>
+  </section>
+
+  <section class="sec" id="archive" aria-labelledby="h-archive">
+    <div class="sec-h">
+      <div><span class="no">05 · ARCHIVE</span><h2 id="h-archive">研究库与方法论</h2></div>
+      <p>上面提到的遭遇、需求、选题和写稿方法，都能点开看实物。</p>
+    </div>
+    <nav class="arc" aria-label="研究库">
+      <a href="situations.html"><span class="n">A</span><h3>同行遭遇索引</h3><span class="k">318<small>组遭遇</small></span><p>从多个同赛道账号的 1800+ 篇文案里，还原用户真实遇到的处境，归并成可检索的清单。</p><span class="go">→</span></a>
+      <a href="needs.html"><span class="n">B</span><h3>底层需求拆解库</h3><span class="k">291<small>组需求</small></span><p>每组遭遇拆成表面问题、底层需求和具体场景，评估能否承接后端咨询产品，筛出值得做的选题方向。</p><span class="go">→</span></a>
+      <a href="topics.html"><span class="n">C</span><h3>雪野选题库</h3><span class="k">298<small>个已发选题</small></span><p>在职期间全部作品的选题：讲给谁、解决什么、怎么做、导流方式和数据；另有 209 个储备选题。</p><span class="go">→</span></a>
+      <a href="method.html"><span class="n">D</span><h3>文案研究与生产方法论</h3><span class="k">6<small>步写稿流程</small></span><p>我写获客口播文案的方法：定位立场、理论溯源、结构与导流、文风，每一步都有规则和依据，并沉淀成可复用的写稿 skill。</p><span class="go">→</span></a>
+    </nav>
+  </section>
+
+
+</div>
+
+<section class="contact" id="contact" aria-labelledby="h-contact">
+  <div class="in">
+    <span class="k">GET IN TOUCH</span>
+    <h2 id="h-contact"><span class="nw">想聊聊 IP 运营</span> <span class="nw">/ 内容获客？</span></h2>
+    <p class="lede">最快的方式是扫码加微信，备注“来自网站”，我会优先回复。</p>
+    <div class="wx">
+      <div>
+        <span class="t">WECHAT · 推荐</span>
+        <h3>扫码加微信</h3>
+        <p>想先看我怎么拆一个账号、做一条选题，可以直接发来，我们聊具体的。</p>
+        <span class="pill">微信号　zjd13816656291</span>
+      </div>
+      <figure><img src="assets/img/wechat-qr.png" alt="周靖达的微信二维码" width="639" height="634" loading="lazy"><figcaption>长按或扫码加好友</figcaption></figure>
+    </div>
+  </div>
+  <div class="cards">
+    <a href="tel:13816656291"><span>电话</span><b>138 1665 6291</b></a>
+    <a href="mailto:pangziwei042@gmail.com"><span>邮箱</span><b>pangziwei042@gmail.com</b></a>
+    <div><span>微信</span><b>zjd13816656291</b></div>
+  </div>
+  <div class="foot"><span>© 2026 周靖达</span><a href="#top">返回顶部 ↑</a></div>
+</section>
+</body>
+</html>
